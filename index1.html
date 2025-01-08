@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ยินดีต้อนรับ</title>
+    <style>
+        /* สไตล์ของ body */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #faf8f8;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* สไตล์ของ container */
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            margin: 20px;
+        }
+
+        /* สไตล์ของ h1 */
+        h1 {
+            font-family: 'Prompt', 'Sarabun', sans-serif;
+            font-weight: bold;
+            /* ปรับความหนา */
+            color: #5A3D9A;
+            /* สีที่ใกล้เคียงกับในภาพ */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            /* เพิ่มเงาเพื่อให้ดูนุ่ม */
+            font-size: 50px;
+            color: #5A3D9A;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            /* เพิ่มระยะระหว่างบรรทัด */
+        }
+
+        /* สไตล์ของปุ่ม */
+        .button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 400;
+            /* ลดความหนา */
+            text-align: center;
+            color: #FFFFFF;
+            background-color: #f5b62a;
+            /* สีส้ม */
+            border: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #f07325;
+            /* สีเหลือง */
+        }
+
+        .button:active {
+            background-color: #f2af13;
+            transform: translateY(2px);
+            /* กดลง */
+            box-shadow: none;
+            /* ลบเงาเมื่อกด */
+        }
+
+        /* สไตล์ของข้อความ label */
+        .options label {
+            display: block;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #333;
+            font-weight: 400;
+            /* ลดความหนา */
+        }
+
+        /* Media Query สำหรับหน้าจอขนาดเล็ก */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 10px 18px;
+            }
+        }
+
+        .xx {
+            position: absolute;
+            /* จัดให้อยู่ตำแหน่งแบบ absolute */
+            top: 0;
+            /* ชิดด้านบน */
+            left: 0;
+            /* ชิดด้านซ้าย */
+            margin: 10px;
+            /* เพิ่มขอบเล็กน้อย */
+        }
+
+        /* แถบสีม่วงด้านบนและด้านล่าง */
+        .purple-bar {
+            width: 250%;
+            height: 80px;
+            background-color: #5A3D9A;
+            /* สีม่วง */
+        }
+
+        .purple-bar.top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .purple-bar.bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="purple-bar top"></div>
+    
+
+    <a class="xx"></a>
+    <img src="03.png" alt="ป้าย" style="width: 325px; height: 155px;">
+    </a>
+
+    <div class="container">
+        <h1>
+            ยินดีต้อนรับสู่ระบบการตรวจ<br>คัดกรองโรคโลหิตจาง
+        </h1>
+        <style>
+            h1 {
+                font-size: 30px;
+                color: #7c5ba6;
+                margin-bottom: 30px;
+                font-weight: bold;
+                line-height: 1.5;
+                /* ระยะห่างระหว่างบรรทัด */
+                word-wrap: break-word;
+                /* ตัดคำให้อยู่ 2 บรรทัดหากข้อความยาวเกิน */
+                max-width: 450px;
+                /* จำกัดความกว้าง */
+                margin: 0 auto;
+                /* จัดกึ่งกลาง */
+            }
+        </style>
+
+        <div class="options">
+            <button class="button" onclick="window.location.href='page4.html'">
+                เริ่มการใช้งาน
+            </button>
+            
+        </div>
+        <div class="purple-bar top"></div>
+    </div>
+</body>
+
+</html>

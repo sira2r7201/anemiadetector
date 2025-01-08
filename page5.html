@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>กำลังดำเนินการ</title>
+    <style>
+       /* General body styling */
+       body {
+            font-family: 'Arial', sans-serif;
+            background: #faf8f8;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .loading {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* Image Classifier Styles */
+        #imagePreview {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px dashed #ccc;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            height: 150px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p class="message">กำลังทำการวิเคราะห์ผลเลือด</p>
+        <p class="loading">กรุณารอสักครู่...</p>
+    </div>
+
+    <script>
+        // Logic to redirect based on risk detection
+        const riskDetected = Math.random() > 0.5; // 50% chance of detecting risk
+        setTimeout(function () {
+            if (riskDetected) {
+                window.location.href = "page6.html"; // Redirect to page7.html if risk is detected
+            } else {
+                window.location.href = "page7.html"; // Redirect to page6.html if no risk is detected
+            }
+        }, 3000); // 3000 milliseconds = 3 seconds
+
+        // Image Classifier logic
+        const imageInput = document.getElementById("imageInput");
+        const imagePreview = document.getElementById("imagePreview");
+        const chooseImageButton = document.getElementById("chooseImageButton");
+        const predictButton = document.getElementById("predictButton");
+
+        chooseImageButton.addEventListener("click", () => {
+            imageInput.click();
+        });
+
+        imageInput.addEventListener("change", (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    imagePreview.innerHTML = `<img src="${e.target.result}" alt="Selected Image" style="max-width: 100%; height: auto;">`;
+                    predictButton.disabled = false;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        predictButton.addEventListener("click", () => {
+            document.getElementById("result").innerText = "Predicting...";
+            // Call your TensorFlow.js model from cnn2.js here
+        });
+    </script>
+</body>
+
+</html>

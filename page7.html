@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผลการตรวจเลือด</title>
+    <style>
+        /* สไตล์รูปภาพซ้ายบน */
+        .logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 10px;
+        }
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #faf8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .button-back-top-right {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /* Main content */
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            margin: 100px auto 20px auto;
+            text-align: center;
+        }
+
+        /* Section Styling */
+        h1,h2 {
+            color: #fe1b1b;
+        }
+        #images-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        #images-container div {
+            text-align: center;
+        }
+
+        #images-container img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        #images-container h3 {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="xx"></a>
+        <img src="03.png" alt="ป้าย" style="width: 150px; height: 70px;">
+    </a>
+    <!-- Back Button -->
+    <a href="page4.html" class="button-back-top-right">
+        <img src="2.png" alt="ย้อนกลับ" style="width: 50px; height: 40px;">
+    </a>
+
+    <!-- Main content -->
+    <div class="container">
+        <h1>วิเคราะห์ผลเลือดเสร็จสมบูรณ์</h1>
+        <h2>ท่านมีความเสี่ยงต่อภาวะโลหิตจาง</h2>
+       
+        <div id="images-container">
+            <!-- Image สำหรับตาซ้าย -->
+            <div>
+                <h3>ตาซ้าย</h3>
+                <img id="leftEyeImage" alt="ไม่พบตาซ้าย">
+            </div>
+            <!-- Image สำหรับตาขวา -->
+            <div>
+                <h3>ตาขวา</h3>
+                <img id="rightEyeImage" alt="ไม่พบตาขวา">
+            </div>
+        </div>
+        <p><strong>จากผลการตรวจวิเคราะห์</strong></p>
+        <p>พบว่าค่าความสมบูรณ์ ของเม็ดเลือดของท่านอยู่ในเกณฑ์ต่ำกว่ามาตราฐาน </p>
+        <p>คำแนะนำ: ควรรีบพบเเพทย์ผู้เชี่ยวชาญเพื่อทำการตรวจอย่างละเอียด</p>
+
+
+        <!-- Load images from localStorage -->
+        <script>
+            const rightImageData = localStorage.getItem('rightEyeImage');
+            const leftImageData = localStorage.getItem('leftEyeImage');
+
+            if (rightImageData) {
+                document.getElementById('rightEyeImage').src = rightImageData;
+            } else {
+                document.getElementById('rightEyeImage').alt = "ไม่พบภาพตาขวา";
+            }
+
+            if (leftImageData) {
+                document.getElementById('leftEyeImage').src = leftImageData;
+            } else {
+                document.getElementById('leftEyeImage').alt = "ไม่พบภาพตาซ้าย";
+            }
+        </script>
+    </div>
+</body>
+
+</html>
